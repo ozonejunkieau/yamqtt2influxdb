@@ -1,0 +1,14 @@
+[Unit]
+Description=MQTT to InfluxDB Bridge Service
+After=network.target
+StartLimitIntervalSec=1
+
+[Service]
+User=tristan
+Type=simple
+Restart=always
+RestartSec=5
+ExecStart=/home/tristan/mqtt2influx/mqtt2influx.py
+
+[Install]
+WantedBy=multi-user.target
